@@ -62,7 +62,7 @@ public class Enemies {
         g.setColor(color);
         g.fillOval((int)(x - r), (int)(y - r), 2 * r, 2 * r);
         g.setStroke(new BasicStroke(3));
-        g.setColor(color.darker());
+        g.setColor(color.brighter());
         g.fillOval((int)(x - r), (int)(y - r), 2 * r, 2 * r);
         g.setStroke(new BasicStroke(3));
     }
