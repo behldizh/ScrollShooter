@@ -11,6 +11,12 @@ public class Bullets {
         private double y;
         private int r;
 
+        private double bulletDX;
+        private double bulletDY;
+        private double distX;
+        private double distY;
+        private double dist;
+
         private int speed;
 
         private Color color1;
@@ -21,12 +27,24 @@ public class Bullets {
             y = GamePanel.player.getY();
             r = 2;
 
-            speed = 10;
+            speed = 7;
 
-            color1 = Color.WHITE;
+            distX = GamePanel.mouseX - x;
+            distY = GamePanel.mouseY - y;
+            dist = Math.sqrt(distX * distX + distY * distY);
+
+            bulletDX = distX/dist * speed;
+            bulletDY = distY/dist * speed;
+
+            color1 = Color.RED;
 
         }
     //Functions
+        public double getX(){return x;}
+        public double getY(){return y;}
+        public int getR(){return r;}
+
+
         public boolean remove(){
 //             Remove bullets
             if (y < 0) {
@@ -36,7 +54,9 @@ public class Bullets {
         }
 
         public void update() {
-            y -= speed;
+
+            y += bulletDY;
+            x += bulletDX;
         }
 
         public void draw(Graphics2D g) {

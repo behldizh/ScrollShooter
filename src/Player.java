@@ -11,6 +11,8 @@ public class Player {
 
     private int speed;
 
+    public double health;
+
     private double dx; //Move Coef
     private double dy;
 
@@ -29,6 +31,8 @@ public class Player {
         r = 5;
 
         speed = 8;
+
+        health = 2;
 
         dx = 0;
         dy = 0;
@@ -50,7 +54,12 @@ public class Player {
     public double getY(){
         return y;
     }
+    public int getR(){ return r; }
 
+    public void hit() {
+        health--;
+        System.out.println(health);
+    }
 
 
     public void update()
@@ -94,10 +103,10 @@ public class Player {
 
     public void draw(Graphics2D g){
         g.setColor(color1);
-        g.fillOval((int) (x-r),(int)(y-r), 3*r, 3*r);
+        g.fillOval((int) (x-r),(int)(y-r), 2*r, 2*r);
         g.setStroke(new BasicStroke(3));
         g.setColor(color1.darker());
-        g.drawOval((int) (x-r),(int)(y-r), 3*r, 3*r);
+        g.drawOval((int) (x-r),(int)(y-r), 2*r, 2*r);
         g.setStroke(new BasicStroke(1));
     }
 
