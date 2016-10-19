@@ -27,9 +27,23 @@ public class Wave {
     //Functions
     public void createEnemies()
     {
-
-
-
+        int enemyCounter = waveNumber * waveMultiplayer;
+            if(waveNumber < 3) {
+                while (enemyCounter > 0) {
+                    int type = 1;
+                    int rank = 1;
+                    GamePanel.enemies.add(new Enemies(type,rank));
+                    enemyCounter -= type * rank;
+                }
+            } else if (waveNumber < 6) {
+                while (enemyCounter > 0) {
+                    int type = 1;
+                    int rank = 2;
+                    GamePanel.enemies.add(new Enemies(type, rank));
+                    enemyCounter -= type * rank;
+                }
+            }
+        waveNumber++;
 
 
    /*     int enemyCount = waveNumber * waveMultiplayer;    Слишком сложный алгоритм, сохраню на всякий случай

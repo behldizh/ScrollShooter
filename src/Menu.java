@@ -43,14 +43,14 @@ public class Menu {
     public void draw(Graphics2D g){
         g.setColor(color1);
         g.setStroke(new BasicStroke(3));
-        g.drawRect(GamePanel.WIDTH/2 - buttonWidth/2, GamePanel.HEIGHT/2 - buttonWidth/2, buttonWidth, buttonHeight);
+        g.drawRect(GamePanel.WIDTH / 2 - buttonWidth / 2, GamePanel.HEIGHT / 2 - buttonHeight / 2, buttonWidth, buttonHeight);
         g.setColor(new Color(255,255,255,transparens));
-        g.fillRect(GamePanel.WIDTH/2 - buttonWidth/2, GamePanel.HEIGHT/2 - buttonWidth/2, buttonWidth, buttonHeight);
+        g.fillRect(GamePanel.WIDTH / 2 - buttonWidth / 2, GamePanel.HEIGHT / 2 - buttonHeight / 2, buttonWidth, buttonHeight);
         g.setStroke(new BasicStroke(1));
 
         g.setColor(color1);
         g.setFont(new Font("Consolas", Font.BOLD, 16));
         long lenght = (int) (g.getFontMetrics().getStringBounds(s, g).getWidth());
-        g.drawString(s, (int)(GamePanel.WIDTH/2 - lenght/2), (int)(GamePanel.HEIGHT/2.4 + buttonHeight/2.3));
+        g.drawString(s, GamePanel.WIDTH / 2 - lenght / 2, GamePanel.HEIGHT / 2 + buttonHeight / 4);
     }
 }
